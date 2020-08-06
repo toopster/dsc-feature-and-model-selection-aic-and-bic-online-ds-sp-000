@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Previously, you've seen how you can select ways of assessing your model fit metrics like MSE, SSE, and $R^2$. These values almost always improve when adding more variables, so if you only use these metrics to determine the optimal features of your model, it is highly likely that you will overfit the model to your data. In this lesson you'll be introduced to two new measures: AIC and BIC, which give you a comprehensive measure of model performace taking into account the additional variables. 
+Previously, you've seen how you can select ways of assessing your model fit metrics like MSE, SSE, and  <img src="https://render.githubusercontent.com/render/math?math=R^2"> . These values almost always improve when adding more variables, so if you only use these metrics to determine the optimal features of your model, it is highly likely that you will overfit the model to your data. In this lesson you'll be introduced to two new measures: AIC and BIC, which give you a comprehensive measure of model performace taking into account the additional variables. 
 
 
 ## Objectives
@@ -16,15 +16,16 @@ You will be able to:
 
 The formula for the AIC, invented by Hirotugu Akaike in 1973 and short for "Akaike's Information Criterion" is given by:
 
-#### $$ \text{AIC} = -2\ln(\hat{L}) + 2k $$
+####  <img src="https://render.githubusercontent.com/render/math?math=\text{AIC} = -2\ln(\hat{L}) %2b 2k "> 
 
 Where:
-* $k$ : length of the parameter space (i.e. the number of features)
-* $\hat{L}$ : the maximum value of the likelihood function for the model
+
+-  <img src="https://render.githubusercontent.com/render/math?math=k"> : length of the parameter space (i.e. the number of features)
+-  <img src="https://render.githubusercontent.com/render/math?math=\hat{L}"> : the maximum value of the likelihood function for the model
 
 Another way to phrase the equation is:
 
-$$ \text{AIC(model)} =  - 2 * \text{log-likelihood(model)} + 2 * \text{length of the parameter space} $$
+ <img src="https://render.githubusercontent.com/render/math?math=\text{AIC(model)} =  - 2 * \text{log-likelihood(model)} %2b 2 * \text{length of the parameter space} "> 
 
 The AIC is generally used to compare each candidate model. The nice thing about the AIC is that for every model that uses Maximum Likelihood Estimation, the log-likelihood is automatically computed, and as a consequence, the AIC is very easy to calculate.
 
@@ -42,16 +43,16 @@ The BIC (Bayesian Information Criterion) is very similar to the AIC and emerged 
 given the data. 
 This idea can be formalized inside a Bayesian framework, involving prior probabilities on candidate models along with prior densities on all parameters in the models. The penalty is slightly changed and depends on the number of rows in the dataset:
 
-$$ \text{BIC} = - 2\ln(\hat{L}) + \ln(n) * k $$
+ <img src="https://render.githubusercontent.com/render/math?math=\text{BIC} = - 2\ln(\hat{L}) %2b \ln(n) * k "> 
 
-where:
+Where:
 
-* $\hat{L}$ and $k$ are the same as in AIC
-* $n$ : the number of data points (the sample size)
+- <img src="https://render.githubusercontent.com/render/math?math=\hat{L}"> and  <img src="https://render.githubusercontent.com/render/math?math=k"> are the same as in AIC
+- <img src="https://render.githubusercontent.com/render/math?math=n"> : the number of data points (the sample size)
 
 Another way to phrase the equation is:
 
-$$ \text{BIC(model)} = -2 * \text{log-likelihood(model)} + \text{log(number of observations)} * \text{(length of the parameter space)} $$
+ <img src="https://render.githubusercontent.com/render/math?math=\text{BIC(model)} = -2 * \text{log-likelihood(model)} %2b \text{log(number of observations)} * \text{(length of the parameter space)} "> 
 
 Like the AIC, the **lower** your BIC, the better your model is performing.
 
